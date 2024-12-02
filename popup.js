@@ -1,5 +1,5 @@
-document.getElementById("toggleDarkMode").addEventListener("click", () => {
-  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    chrome.tabs.sendMessage(tabs[0].id, { action: "toggleDarkMode" });
+document.addEventListener('DOMContentLoaded', () => {
+  chrome.runtime.sendMessage({ greeting: "hello" }, (response) => {
+    console.log("Response from background script:", response);
   });
 });
